@@ -5,8 +5,8 @@
  * License: AGPLv3
  */
 $(function() {
-    function WidescreenViewModel(parameters) {
-        var self = this;
+	function WidescreenViewModel(parameters) {
+		var self = this;
 		self.right_sidebar_items = ko.observableArray();
 		self.available_sidebar_items = ko.observableArray();
 		self.unassigned_sidebar_items = ko.computed(function() {
@@ -22,7 +22,7 @@ $(function() {
 				return results;
 			});
 
-        self.settingsViewModel = parameters[0];
+		self.settingsViewModel = parameters[0];
 		
 		self.onBeforeBinding = function() {
 			self.right_sidebar_items(self.settingsViewModel.settings.plugins.widescreen.right_sidebar_items());
@@ -39,7 +39,11 @@ $(function() {
 			});
 		}
 
-        self.onAllBound = function(){
+		self.onAllBound = function(){
+			// navbar adjustments
+			$('#navbar > div.navbar-inner > div.container').css({'width':'100%'});
+			$('#navbar > div.navbar-inner').css({'padding-left':'20px'});
+
 			// main content adjustments
 			$('div.container.octoprint-container').addClass('row-fluid');
 			$('div.container.octoprint-container.row-fluid > div.row').css({'margin-left':'20px','padding-right':'20px'});
@@ -47,6 +51,10 @@ $(function() {
 			// sidebar adjustments
 			$('div.container.octoprint-container > div.row > div.accordion.span4:first').removeClass('span4').addClass('span3');
 			// $('#files div.row-fluid.upload-buttons > span.btn.btn-primary.fileinput-button.span6:nth-child(2) > span').text('Upload SD');
+
+			// footer adjustments
+			$('ul#footer_version').css({'padding-left':'20px'});
+			$('ul#footer_links').css({'padding-right':'20px'});
 
 			// tabs adjustments
 			$('div.container.octoprint-container > div.row > div.tabbable.span8').removeClass('span8').addClass('span6');
@@ -70,15 +78,15 @@ $(function() {
 			self.right_sidebar_items(self.settingsViewModel.settings.plugins.widescreen.right_sidebar_items());
 		}
 
-    }
+	}
 
-    /* view model class, parameters for constructor, container to bind to
-     * Please see http://docs.octoprint.org/en/master/plugins/viewmodels.html#registering-custom-viewmodels for more details
-     * and a full list of the available options.
-     */
-    OCTOPRINT_VIEWMODELS.push({
-        construct: WidescreenViewModel,
-        dependencies: ["settingsViewModel"],
-        elements: ["#settings_plugin_widescreen"]
-    });
+	/* view model class, parameters for constructor, container to bind to
+	 * Please see http://docs.octoprint.org/en/master/plugins/viewmodels.html#registering-custom-viewmodels for more details
+	 * and a full list of the available options.
+	 */
+	OCTOPRINT_VIEWMODELS.push({
+		construct: WidescreenViewModel,
+		dependencies: ["settingsViewModel"],
+		elements: ["#settings_plugin_widescreen"]
+	});
 });
