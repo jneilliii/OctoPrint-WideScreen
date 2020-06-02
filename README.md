@@ -1,6 +1,8 @@
 # OctoPrint-WideScreen
 
-**TODO:** Describe what your plugin does.
+This plugin adds a right sidebar panel and moves configured panels from left sidebar to the right sidebar.
+
+![screenshot](screenshot.png)
 
 ## Setup
 
@@ -9,9 +11,23 @@ or manually using this URL:
 
     https://github.com/jneilliii/OctoPrint-WideScreen/archive/master.zip
 
-**TODO:** Describe how to install your plugin, if more needs to be done than just installing it via pip or through
-the plugin manager.
-
 ## Configuration
 
-**TODO:** Describe your plugin's configuration options (if any).
+Once installed open settings and select which sidebar panels should be moved to the right side.
+
+![screenshot](screenshot_settings.png)
+
+## Get Help
+
+If you experience issues with this plugin or need assistance please go to the issues tab above and submit an issue with as much details as possible.
+
+### Additional Plugins
+
+Check out my other plugins [here](https://plugins.octoprint.org/by_author/#jneilliii)
+
+### Support My Efforts
+I, jneilliii, programmed this plugin for fun and do my best effort to support those that have issues with it, please return the favor and leave me a tip or become a Patron if you find this plugin helpful and want me to continue future development.
+
+[![Patreon](patreon-with-text-new.png)](https://www.patreon.com/jneilliii) [![paypal](paypal-with-text.png)](https://paypal.me/jneilliii)
+
+<small>No paypal.me? Send funds via PayPal to jneilliii&#64;gmail&#46;com</small>
