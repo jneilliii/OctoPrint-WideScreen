@@ -18,9 +18,12 @@ class WidescreenPlugin(octoprint.plugin.SettingsPlugin,
 
 	def get_assets(self):
 		return dict(
-			js=["js/widescreen.js"],
+			js=["js/jquery-ui.min.js","js/knockout-sortable.js","js/widescreen.js"],
 			css=["css/widescreen.css"]
 		)
+
+	def get_template_configs(self):
+		return [dict(type="settings", custom_bindings=True)]
 
 	##~~ Softwareupdate hook
 
