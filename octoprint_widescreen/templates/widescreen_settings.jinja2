@@ -1,19 +1,18 @@
+<div class="row-fluid"><small>Drag and drop panels between the left and right sidebars.</small></div>
 <div class="row-fluid">
 	<div class="span6">
-		<div class="row-fluid"><h5 style="text-align: center;"><u>{{ _('Left Panel') }}</u></h5></div>
-		<div class="row-fluid" data-bind="foreach: unassigned_sidebar_items">
+		<div class="row-fluid"><h5 style="text-align: center;"><u>{{ _('Left Sidebar') }}</u></h5></div>
+		<div class="row-fluid" data-bind="sortable: { data: available_sidebar_items, options: { cancel: '.unsortable', cursor: 'move' } }" style="min-height: 50px;">
 			<div class="row-fluid">
-				<div class="span11" data-bind="text: $data"></div>
-				<div class="span1 btn-group"><button class="btn btn-mini btn-primary icon-arrow-right" data-bind="click: $root.add_sidebar_item"></button></div>
+				<div class="span10 offset1 well" data-bind="text: $data"></div>
 			</div>
 		</div>
 	</div>
 	<div class="span6">
-		<div class="row-fluid"><h5 style="text-align: center;"><u>{{ _('Right Panel') }}</u></h5></div>
-		<div class="row-fluid" data-bind="foreach: settingsViewModel.settings.plugins.widescreen.right_sidebar_items">
-			<div class="row-fluid" style="margin-bottom: 5px;">
-				<div class="span1 btn-group" style="text-align: center;"><button class="btn btn-mini btn-primary icon-arrow-left" data-bind="click: $root.remove_sidebar_item"></button></div>
-				<div class="span11" data-bind="text: $data"></div>
+		<div class="row-fluid"><h5 style="text-align: center;"><u>{{ _('Right Sidebar') }}</u></h5></div>
+		<div class="row-fluid" data-bind="sortable: { data: right_sidebar_items, options: { cancel: '.unsortable', cursor: 'move' } }" style="min-height: 50px;">
+			<div class="row-fluid">
+				<div class="span10 offset1 well" data-bind="text: $data"></div>
 			</div>
 		</div>
 	</div>

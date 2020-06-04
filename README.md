@@ -1,6 +1,6 @@
 # OctoPrint-WideScreen
 
-This plugin adds a right sidebar panel and moves configured panels from left sidebar to the right sidebar.
+Once installed open settings and drag the panels between the left and right sidebars.
 
 ![screenshot](screenshot.png)
 
