@@ -1,1 +1,4 @@
-/* TODO: Have your plugin's CSS files generated to here. */
+#right_sidebar #files_wrapper .dropdown-menu {
+    right: 0;
+    left: auto;
+}
