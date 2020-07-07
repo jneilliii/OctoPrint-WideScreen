@@ -7,10 +7,17 @@
 $(function() {
 	function WidescreenViewModel(parameters) {
 		var self = this;
+
+		self.settingsViewModel = parameters[0];
+		self.touchui = parameters[1];
+
+		if (self.touchui && self.touchui.isActive()) {
+			return
+		}
+
 		self.right_sidebar_items = ko.observableArray([]);
 		self.available_sidebar_items = ko.observableArray([]);
 
-		self.settingsViewModel = parameters[0];
 
 		self.onBeforeBinding = function() {
 			self.right_sidebar_items(self.settingsViewModel.settings.plugins.widescreen.right_sidebar_items());
@@ -89,7 +96,8 @@ $(function() {
 
 	OCTOPRINT_VIEWMODELS.push({
 		construct: WidescreenViewModel,
-		dependencies: ["settingsViewModel"],
+		dependencies: ["settingsViewModel", "touchUIViewModel"],
+		optional: ["touchUIViewModel"],
 		elements: ["#settings_plugin_widescreen"]
 	});
 });
