@@ -18,7 +18,7 @@ class WidescreenPlugin(octoprint.plugin.SettingsPlugin,
 
 	def get_assets(self):
 		return dict(
-			js=["js/jquery-ui.min.js","js/knockout-sortable.js","js/widescreen.js"],
+			js=["js/jquery-ui.min.js","js/knockout-sortable.1.2.0.js","js/widescreen.js"],
 			css=["css/widescreen.css"]
 		)
 
@@ -38,6 +38,16 @@ class WidescreenPlugin(octoprint.plugin.SettingsPlugin,
 				user="jneilliii",
 				repo="OctoPrint-WideScreen",
 				current=self._plugin_version,
+                stable_branch=dict(
+                    name="Stable", branch="master", comittish=["master"]
+                ),
+                prerelease_branches=[
+                    dict(
+                        name="Release Candidate",
+                        branch="rc",
+                        comittish=["rc", "master"],
+                    )
+                ],
 
 				# update method: pip
 				pip="https://github.com/jneilliii/OctoPrint-WideScreen/archive/{target_version}.zip"
