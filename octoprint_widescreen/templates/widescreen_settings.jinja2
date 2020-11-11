@@ -1,3 +1,43 @@
+<h4>OctoPrint Widescreen</h4>
+<div class="row-fluid" style="margin-top: 10px;">
+    <div class="span12">
+        <div class="alert">
+              <strong>Note:</strong> These settings only take effect when the page is reloaded.
+        </div>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span6 border-right">
+        <div class="form-inline">
+            <label class="checkbox inline">
+                <input type="checkbox" data-bind="checked: should_use_useragent"> Detect small screens based on User Agent
+            </label>
+            <div class="help-block">
+                The widescreen will not show on browsers identifying themselves as mobile devices.
+            </div>
+        </div>
+    </div>
+    <div class="span6">
+        <div class="form-inline">
+            <label class="checkbox inline">
+                <input type="checkbox" data-bind="checked: should_use_resolution"> Detect small screens based on resolution
+            </label>
+            <div data-bind="visible: should_use_resolution">
+                <label class="inline">
+                    Resolution threshold:
+                </label>
+                <div class="input-append">
+                    <input type="number" min="0" data-bind="value: resolution_threshold">
+                    <span class="add-on">px</span>
+                </div>
+            </div>
+            <div class="help-block">
+                The widescreen will not show on browsers with screen width below the threshold.
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
 <div class="row-fluid"><small>Drag and drop panels between the left and right sidebars.</small></div>
 <div class="row-fluid">
 	<div class="span6">

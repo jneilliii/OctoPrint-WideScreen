@@ -2,3 +2,9 @@
     right: 0;
     left: auto;
 }
+
+#settings_plugin_widescreen .border-right {
+    border-right: darkgray;
+    border-right-style: solid;
+    border-right-width: 1px;
+}

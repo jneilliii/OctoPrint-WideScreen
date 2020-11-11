@@ -11,7 +11,10 @@ class WidescreenPlugin(octoprint.plugin.SettingsPlugin,
 
 	def get_settings_defaults(self):
 		return dict(
-			right_sidebar_items = []
+			right_sidebar_items = [],
+			use_resolution=False,
+			resolution_threshold=480,
+			use_useragent=False,
 		)
 
 	##~~ AssetPlugin mixin
